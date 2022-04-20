@@ -1,36 +1,79 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="spyce">
+      <UniqueIdentifier>{697C5F10-D590-87C1-9E12-2B210AE683F2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="spyce\data_structures">
+      <UniqueIdentifier>{95AD1619-011A-D213-CA0D-6A713639F47B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="spyce\events">
+      <UniqueIdentifier>{4D0CB7EF-396F-4694-E2F4-7E4ACE361217}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\spyce\application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="src\Header.h" />
+    <ClInclude Include="src\platform\Windows\windows_window.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scpch.h" />
+    <ClInclude Include="src\spyce.h" />
     <ClInclude Include="src\spyce\application.h">
-      <Filter>Header Files</Filter>
+      <Filter>spyce</Filter>
     </ClInclude>
     <ClInclude Include="src\spyce\core.h">
-      <Filter>Header Files</Filter>
+      <Filter>spyce</Filter>
     </ClInclude>
-    <ClInclude Include="src\spyce.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\spyce\data_structures\list.h">
+      <Filter>spyce\data_structures</Filter>
     </ClInclude>
     <ClInclude Include="src\spyce\entry_point.h">
-      <Filter>Header Files</Filter>
+      <Filter>spyce</Filter>
     </ClInclude>
+    <ClInclude Include="src\spyce\events\event.h">
+      <Filter>spyce\events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spyce\events\key_event.h">
+      <Filter>spyce\events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spyce\events\mouse_event.h">
+      <Filter>spyce\events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spyce\events\window_event.h">
+      <Filter>spyce\events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spyce\log.h">
+      <Filter>spyce</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spyce\math.h">
+      <Filter>spyce</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spyce\random.h">
+      <Filter>spyce</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spyce\window.h">
+      <Filter>spyce</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\platform\Windows\windows_window.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scpch.cpp" />
+    <ClCompile Include="src\spyce\application.cpp">
+      <Filter>spyce</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spyce\log.cpp">
+      <Filter>spyce</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spyce\random.cpp">
+      <Filter>spyce</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,0 +1,6 @@
+[submodule "Spyce/vendor/spdlog"]
+	path = Spyce/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "Spyce/vendor/GLFW"]
+	path = Spyce/vendor/GLFW
+	url = https://github.com/glfw/glfw
