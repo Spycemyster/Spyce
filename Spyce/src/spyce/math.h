@@ -74,6 +74,16 @@ namespace Spyce
 		}
 
 		/// <summary>
+		/// Takes the square root.
+		/// </summary>
+		/// <param name="val"></param>
+		/// <returns></returns>
+		inline float Sqrt(float val)
+		{
+			return std::sqrtf(val);
+		}
+
+		/// <summary>
 		/// The num-th power of 2.
 		/// 
 		/// O(log[num])

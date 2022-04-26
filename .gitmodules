@@ -4,3 +4,6 @@
 [submodule "Spyce/vendor/GLFW"]
 	path = Spyce/vendor/GLFW
 	url = https://github.com/glfw/glfw
+[submodule "Spyce/vendor/imgui"]
+	path = Spyce/vendor/imgui
+	url = https://github.com/ocornut/imgui

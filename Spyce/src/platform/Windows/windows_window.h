@@ -1,8 +1,9 @@
 #pragma once
 
-#include <GLFW/glfw3.h>
 #include "spyce/window.h"
 #include "spyce/core.h"
+
+#include <GLFW/glfw3.h>
 
 namespace Spyce
 {

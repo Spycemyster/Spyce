@@ -1,5 +1,6 @@
 #pragma once
 
+#include "scpch.h"
 #include "spyce/core.h"
 
 namespace Spyce
@@ -50,7 +51,8 @@ namespace Spyce
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual int GetCategoryFlags() const = 0;
-		virtual std::string ToString() const { return GetName(); }
+		virtual std::string ToString() const { return std::string(GetName()); }
+		bool IsHandled() const { return mHandled; }
 		/// <summary>
 		/// This event has the specified category.
 		/// </summary>
@@ -73,7 +75,7 @@ namespace Spyce
 
 		template<typename T>
 		/// <summary>
-		/// 
+		/// Dispatch
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="function"></param>
@@ -94,6 +96,7 @@ namespace Spyce
 
 	inline std::ostream& operator<< (std::ostream& os, const Event& e)
 	{
-		return os << e.ToString();
+		const std::string& r = e.ToString();
+		return os << r;
 	}
 }

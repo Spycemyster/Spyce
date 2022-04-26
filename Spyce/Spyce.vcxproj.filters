@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Platform">
-      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    <Filter Include="platform">
+      <UniqueIdentifier>{4A63C33C-3630-1E48-5F49-0CF04B7553D6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform\Windows">
-      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    <Filter Include="platform\Windows">
+      <UniqueIdentifier>{84B77CA1-70B0-9BF3-99E2-8078853A7BFF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\opengl">
+      <UniqueIdentifier>{9E4DBFD0-0AD9-2C95-13EA-AF897FF48895}</UniqueIdentifier>
     </Filter>
     <Filter Include="spyce">
       <UniqueIdentifier>{697C5F10-D590-87C1-9E12-2B210AE683F2}</UniqueIdentifier>
@@ -16,11 +19,20 @@
     <Filter Include="spyce\events">
       <UniqueIdentifier>{4D0CB7EF-396F-4694-E2F4-7E4ACE361217}</UniqueIdentifier>
     </Filter>
+    <Filter Include="spyce\imgui">
+      <UniqueIdentifier>{9374FBD8-FF29-74CE-881E-6EA5F4D26AD2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="spyce\shapes">
+      <UniqueIdentifier>{1CC35F0F-0826-EFB3-B1AB-276A9DEDBA36}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Header.h" />
     <ClInclude Include="src\platform\Windows\windows_window.h">
-      <Filter>Platform\Windows</Filter>
+      <Filter>platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\opengl\imgui_opengl_renderer.h">
+      <Filter>platform\opengl</Filter>
     </ClInclude>
     <ClInclude Include="src\scpch.h" />
     <ClInclude Include="src\spyce.h" />
@@ -31,6 +43,9 @@
       <Filter>spyce</Filter>
     </ClInclude>
     <ClInclude Include="src\spyce\data_structures\list.h">
+      <Filter>spyce\data_structures</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spyce\data_structures\max_finder.h">
       <Filter>spyce\data_structures</Filter>
     </ClInclude>
     <ClInclude Include="src\spyce\entry_point.h">
@@ -48,6 +63,15 @@
     <ClInclude Include="src\spyce\events\window_event.h">
       <Filter>spyce\events</Filter>
     </ClInclude>
+    <ClInclude Include="src\spyce\imgui\imgui_layer.h">
+      <Filter>spyce\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spyce\layer.h">
+      <Filter>spyce</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spyce\layer_stack.h">
+      <Filter>spyce</Filter>
+    </ClInclude>
     <ClInclude Include="src\spyce\log.h">
       <Filter>spyce</Filter>
     </ClInclude>
@@ -57,22 +81,54 @@
     <ClInclude Include="src\spyce\random.h">
       <Filter>spyce</Filter>
     </ClInclude>
+    <ClInclude Include="src\spyce\shapes\circle.h">
+      <Filter>spyce\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spyce\shapes\triangle.h">
+      <Filter>spyce\shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spyce\vector2.h">
+      <Filter>spyce</Filter>
+    </ClInclude>
     <ClInclude Include="src\spyce\window.h">
       <Filter>spyce</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\lalam\Downloads\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="src\platform\opengl\imgui_impl_opengl3_loader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\platform\Windows\windows_window.cpp">
-      <Filter>Platform\Windows</Filter>
+      <Filter>platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\opengl\imgui_opengl_renderer.cpp">
+      <Filter>platform\opengl</Filter>
     </ClCompile>
     <ClCompile Include="src\scpch.cpp" />
     <ClCompile Include="src\spyce\application.cpp">
+      <Filter>spyce</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spyce\imgui\imgui_layer.cpp">
+      <Filter>spyce\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spyce\layer.cpp">
+      <Filter>spyce</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spyce\layer_stack.cpp">
       <Filter>spyce</Filter>
     </ClCompile>
     <ClCompile Include="src\spyce\log.cpp">
       <Filter>spyce</Filter>
     </ClCompile>
     <ClCompile Include="src\spyce\random.cpp">
+      <Filter>spyce</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spyce\shapes\circle.cpp">
+      <Filter>spyce\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spyce\shapes\triangle.cpp">
+      <Filter>spyce\shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\spyce\vector2.cpp">
       <Filter>spyce</Filter>
     </ClCompile>
   </ItemGroup>

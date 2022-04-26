@@ -4,6 +4,8 @@
 #include "spyce/events/key_event.h"
 #include "spyce/events/mouse_event.h"
 
+#include <glad/glad.h>
+
 namespace Spyce
 {
 	static bool g_GLFWInitialized = false;
@@ -46,6 +48,8 @@ namespace Spyce
 
 		mWindow = glfwCreateWindow((int)props.Width, (int)props.Height, mData.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(mWindow);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		SC_CORE_ASSERT(status, "Failed to initialize GLAD.");
 		glfwSetWindowUserPointer(mWindow, &mData);
 		SetVSync(true);
 

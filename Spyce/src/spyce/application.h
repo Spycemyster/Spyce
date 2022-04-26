@@ -1,7 +1,8 @@
 #pragma once
-#include "core.h"
-#include "spyce/events/window_event.h"
+#include "events/window_event.h"
 #include "window.h"
+#include "layer.h"
+#include "layer_stack.h"
 
 namespace Spyce 
 {
@@ -24,10 +25,19 @@ namespace Spyce
 			/// </summary>
 			/// <param name="e"></param>
 			void OnEvent(Event& e);
+
+			inline static Application& Get() { return *sInstance; }
+			inline Window& GetWindow() { return *mWindow; }
+
+			// layer system
+			void PushLayer(Layer* layer);
+			void RemoveLayer(Layer* layer);
 	private:
 		bool OnWindowClose(WindowCloseEvent& evt);
 		std::unique_ptr<Window> mWindow;
 		bool mIsRunning;
+		LayerStack mStack;
+		static Application* sInstance;
 	};
 
 	// to be defined in client

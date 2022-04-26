@@ -15,8 +15,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Spyce/vendor/GLFW/include"
+IncludeDir["Glad"] = "Spyce/vendor/Glad/include"
+IncludeDir["imgui"] = "Spyce/vendor/imgui"
 
 include "Spyce/vendor/GLFW"
+include "Spyce/vendor/Glad"
+include "Spyce/vendor/imgui"
 
 project "Spyce"
     location "Spyce"
@@ -39,25 +43,30 @@ project "Spyce"
     {
         "%{prj.name}/vendor/spdlog/include",
         "%{prj.name}/src",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}",
+        "%{IncludeDir.imgui}"
     }
 
     links
     {
         "GLFW",
+        "Glad",
+        "imgui",
         "opengl32.lib"
     }
 
 
     filter "system:windows"
         cppdialect "C++20"
-        staticruntime "off"
+        staticruntime "on"
         systemversion "latest"
 
         defines
         {
             "SC_PLATFORM_WINDOWS",
-            "SC_BUILD_DLL"
+            "SC_BUILD_DLL",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands
@@ -71,14 +80,17 @@ project "Spyce"
             "SC_DEBUG",
             "SC_ENABLE_ASSERTS"
         }
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "SC_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Dist"
         defines "SC_DIST"
+        buildoptions "/MD"
         optimize "On"
 
 project "Sandbox"
@@ -122,12 +134,15 @@ project "Sandbox"
             "SC_DEBUG",
             "SC_ENABLE_ASSERTS"
         }
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "SC_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Dist"
         defines "SC_DIST"
+        buildoptions "/MD"
         optimize "On"

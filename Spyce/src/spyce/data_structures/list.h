@@ -7,7 +7,7 @@ namespace Spyce
 	/// <summary>
 	/// Stores objects as a continguous piece of memory.
 	/// </summary>
-	class List
+	class SC_API List
 	{
 	public:
 		// iterator
